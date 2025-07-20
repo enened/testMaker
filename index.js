@@ -58,7 +58,7 @@ app.post("/signUp", (req, res)=>{
 })
 
 app.post("/createTest", (req, res)=>{
-    console.log(req.body.title, req.body.slides, req.body.userId)
+
     db.query("insert into tests (title, userId) values(?, ?)", [req.body.title, req.body.userId], (err, result)=>{
         if (err){
             console.log(err)
@@ -126,7 +126,6 @@ app.post("/getTestInfo", (req, res)=>{
 })
 
 app.post("/getTestBySearch", (req, res)=>{
-    console.log(req.body.searchResult)
     db.query("select * from tests where testId = ? or title = ?", [req.body.searchResult, req.body.searchResult], (err, result)=>{
         if (err){
             console.log(err)
