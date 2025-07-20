@@ -41,6 +41,10 @@ npm install
 node index.js
 ```
 
-
+## Notes
+This project was created during a hackthon in limited time and focuses on the core functions. Limitations include:
+* Limited input validation and error handling
+* Basic styling
+* No session persistence
 
 
