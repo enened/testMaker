@@ -5,7 +5,6 @@ A simple web application where users can manually create, share, and take tests.
 * Create custom multiple choice tests with the answer choices
 * Search for other created tests 
 * Take tests and view results
-* Previous score saved
 
 ## Built With
 * Node.js/Express
