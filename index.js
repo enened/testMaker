@@ -3,11 +3,12 @@ const app = express();
 const mysql = require('mysql');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+require('dotenv').config()
 
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'password',
+  host: process.env.DB_HOST,
+  user:  process.env.DB_USER,
+  password:  process.env.DB_PASSWORD,
   database: 'test_maker'
 });
 
@@ -92,7 +93,7 @@ app.post("/createTest", (req, res)=>{
 app.post("/getTests", (req, res)=>{
     db.query("select * from tests where userId = ?", [req.body.userId], (err, result)=>{
         if (err){
-            console.log(result)
+            console.log(err)
         }
         else{
             res.send(result)
@@ -103,14 +104,14 @@ app.post("/getTests", (req, res)=>{
 app.post("/getTestInfo", (req, res)=>{
     db.query("select * from questions where testId = ?", [req.body.testId], (err, result)=>{
         if (err){
-            console.log(result)
+            console.log(err)
         }
         else{
             var questionAnswer = [...result]
             for (let i = 0; i < result.length; i++) {
                 db.query("select * from answer where questionId = ?", [result[i].questionId], (err, result2)=>{
                     if (err){
-                        console.log(result)
+                        console.log(err)
                     }
                     else{
                         questionAnswer[i].answers = result2
@@ -128,10 +129,9 @@ app.post("/getTestBySearch", (req, res)=>{
     console.log(req.body.searchResult)
     db.query("select * from tests where testId = ? or title = ?", [req.body.searchResult, req.body.searchResult], (err, result)=>{
         if (err){
-            console.log(result)
+            console.log(err)
         }
         else{
-            console.log(result)
             res.send(result)
         }
     })
