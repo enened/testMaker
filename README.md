@@ -18,7 +18,7 @@ A simple web application where users can manually create, share, and take tests.
 git clone https://github.com/enened/testMaker.git
 ```
 
-2. Start React: 
+2. Start React
 ```bash
 cd test_maker
 npm install
@@ -26,14 +26,14 @@ npm start
 ```
 
 3. Set up MySQL database by running the sqlScript.sql file
-4. Enter database credentials in a .env file like so:
+4. Enter database credentials in a .env file
 ```env
 DB_HOST = localhost
 DB_USER = youruser
 DB_PASSWORD = yourpassword
 ```
 
-6. Start express server:
+5. Start express server:
 
  ```bash
 npm install
