@@ -33,7 +33,7 @@ DB_USER = youruser
 DB_PASSWORD = yourpassword
 ```
 
-5. Start express server:
+5. Start express server
 
  ```bash
 npm install
@@ -41,7 +41,7 @@ node index.js
 ```
 
 ## Notes
-This project was created during a hackthon in limited time and focuses on the core functions. Limitations include:
+This project was created during a hackathon in limited time and focuses on the core functions. Limitations include:
 * Limited input validation and error handling
 * Basic styling
 * No session persistence
